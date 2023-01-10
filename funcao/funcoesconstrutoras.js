@@ -23,4 +23,6 @@ console.log(uno.getVelocidadeAtual())
 
 const ferrari = new carro(350, 20)
 ferrari.acelerar()
+ferrari.acelerar()
+ferrari.acelerar()
 console.log(ferrari.getVelocidadeAtual())
