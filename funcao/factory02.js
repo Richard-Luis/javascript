@@ -14,10 +14,10 @@ console.log(criarProduto()) // Meu
         return {
             nome,
             preco,
-            loja: 'Nas Lojas Quero Quero',
-            desconto: 0.2
+            loja: 'Lojas Quero Quero',
+            desconto: 0.8
         }
     }
 
-    console.log(produtoCriado(`Notebook`, 2199.49))
-    console.log(produtoCriado(`Ipad`, 1199.49))
+    console.log(produtoCriado(`Notebook`, 3199.49))
+    console.log(produtoCriado(`Ipad`, 2199.49))
