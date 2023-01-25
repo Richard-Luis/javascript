@@ -1,5 +1,14 @@
-function soma([a, b, c] = [3, 5, 9]){
-   return a + b / c 
+const divisao = (dividendo, divisor) =>{
+   let result = Math.floor(dividendo / divisor)
+   console.log('Resultado: ' + result)
+   console.log('Resto: ' + dividendo % divisor)
 }
 
-console.log(soma())
+divisao(11, 4)
+
+function division(dividendo, divisor) {
+   console.log("Resultado: " + Math.floor(dividendo  / divisor))
+   console.log('Resto: ' + dividendo % divisor)
+}
+
+division(4, 11)
