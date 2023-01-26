@@ -1,7 +1,45 @@
-const jogos = [10, 20, 20, 8, 25, 3, 0, 30, 1] = [p1, p2, p3, p4, p5, p6, p7, p8, p9]
+let jogos = '10, 20, 20, 8, 25, 3, 0, 30, 1'
 
-function resultadoJogos(pt, p) {
-    console.log(`${pt + "Pontução"}: ${p} `)
+const avaliaPontuacao = (stringPontuacao) => {
+    let pontuacao = stringPontuacao.split(',')
+    let qntQuebraRecordes = 0
+    let piorJogo = 1
+    let maiorPontuacao = pontuacao[0]
+    let menorPontuacao = pontuacao[0]
+
+    for (let i = 1; i < pontuacao.length; i++) {
+        if (pontuacao > maiorPontuacao) {
+            maiorPontuacao = pontuacao[i];
+            qntQuebraRecordes++
+        } else if (pontuacao < menorPontuacao) {
+            menorPontuacao = pontuacao[i];
+            piorJogo = i + 1
+        }
+    }
+    return [qntQuebraRecordes, piorJogo]
 }
 
-jogos.forEach(resultadoJogos())
+console.log(avaliaPontuacao(stringPontuacao))
+
+let stringPontuacao = '10, 20, 20, 8, 25, 3, 0, 30, 1';
+
+const avaliaPontuacao = (stringPontuacao) => {
+  let pontuacao = stringPontuacao.split(', ');
+  let qtdQuebraRecordes = 0;
+  let piorJogo = 1;
+  let maiorPontuacao = pontuacao[0];
+  let menorPontuacao = pontuacao[0];
+
+  for (let i = 1; i < pontuacao.length; i++) {
+    if (pontuacao > maiorPontuacao) {
+      maiorPontuacao = pontuacao[i];
+      qtdQuebraRecordes++;
+    } else if (pontuacao < menorPontuacao) {
+      menorPontuacao = pontuacao[i];
+      piorJogo = i + 1;
+    }
+  }
+  return [qtdQuebraRecordes, piorJogo]
+}
+
+console.log(avaliaPontuacao(stringPontuacao));
