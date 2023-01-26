@@ -1,45 +1,23 @@
-let jogos = '10, 20, 20, 8, 25, 3, 0, 30, 1'
-
-const avaliaPontuacao = (stringPontuacao) => {
-    let pontuacao = stringPontuacao.split(',')
-    let qntQuebraRecordes = 0
+let stringPontuacoes = "30, 40, 20, 4, 51, 25, 42, 38, 56, 0"
+ 
+ 
+function avaliaPontuacoes (stringPontuacoes) {
+    let pontuacoes = stringPontuacoes.split(", ")
+    let qtdQuebraDeRecords = 0
     let piorJogo = 1
-    let maiorPontuacao = pontuacao[0]
-    let menorPontuacao = pontuacao[0]
+    let maiorPontuacao = pontuacoes[0]
+    let menorPontuacao = pontuacoes[0]
 
-    for (let i = 1; i < pontuacao.length; i++) {
-        if (pontuacao > maiorPontuacao) {
-            maiorPontuacao = pontuacao[i];
-            qntQuebraRecordes++
-        } else if (pontuacao < menorPontuacao) {
-            menorPontuacao = pontuacao[i];
-            piorJogo = i + 1
+    for (let i = 1; i < pontuacoes.length; i++) {
+        if(pontuacoes[i] > maiorPontuacao) {
+            maiorPontuacao = pontuacoes[i]
+            qtdQuebraDeRecords++
+        }else if (pontuacoes[i] < menorPontuacao) {
+            menorPontuacao = pontuacoes[i]
+            piorJogo = i+1;
         }
     }
-    return [qntQuebraRecordes, piorJogo]
+    return [qtdQuebraDeRecords, piorJogo]
 }
-
-console.log(avaliaPontuacao(stringPontuacao))
-
-let stringPontuacao = '10, 20, 20, 8, 25, 3, 0, 30, 1';
-
-const avaliaPontuacao = (stringPontuacao) => {
-  let pontuacao = stringPontuacao.split(', ');
-  let qtdQuebraRecordes = 0;
-  let piorJogo = 1;
-  let maiorPontuacao = pontuacao[0];
-  let menorPontuacao = pontuacao[0];
-
-  for (let i = 1; i < pontuacao.length; i++) {
-    if (pontuacao > maiorPontuacao) {
-      maiorPontuacao = pontuacao[i];
-      qtdQuebraRecordes++;
-    } else if (pontuacao < menorPontuacao) {
-      menorPontuacao = pontuacao[i];
-      piorJogo = i + 1;
-    }
-  }
-  return [qtdQuebraRecordes, piorJogo]
-}
-
-console.log(avaliaPontuacao(stringPontuacao));
+ 
+console.log(avaliaPontuacoes(stringPontuacoes))
