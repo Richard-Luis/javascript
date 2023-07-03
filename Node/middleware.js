@@ -13,6 +13,8 @@ const passo2 = (ctx, next) =>{
 
 const passo3 = ctx => ctx.valor3 = 'mid3'
 
+
+
 const exec = (ctx, ...middlewares) =>{
 
     //vai executar os passos do indice
