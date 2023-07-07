@@ -2,7 +2,10 @@ const porta = 3003
 
 const express = require('express')
 const app = express()
+const bodyParser = require('body-parser')
 const bancoDeDados = require('./bancoDeDados')
+
+app.use(bodyParser.urlencoded({extended: true}))
 
 //get é uma forma de requisição
 app.get('/produtos', (req, res, next) =>{
